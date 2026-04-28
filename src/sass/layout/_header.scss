@@ -36,25 +36,6 @@
 
     &>a {
 
-
-      &:after {
-        content: "\e900";
-        font-family: 'icomoon' !important;
-        width: 9px;
-        height: 5px;
-        font-size: 6px;
-        position: absolute;
-        top: calc(50% - 3px);
-        right: 0;
-        -webkit-transition: all .4s ease-out;
-        -moz-transition: all .4s ease-out;
-        -o-transition: all .4s ease-out;
-        transition: all .4s ease-out;
-
-        @media (max-width: $breakpoint-lg) {
-          display: none;
-        }
-      }
     }
 
     & .sub-menu {
@@ -183,18 +164,7 @@
               padding-right: 18px;
             }
 
-            &:after {
-              content: "\e900";
-              font-family: 'icomoon' !important;
-              width: 9px;
-              height: 5px;
-              font-size: 6px;
-              position: absolute;
-              top: calc(50% - 3px);
-              right: 0;
 
-              @include transition(.4);
-            }
           }
 
 
@@ -519,4 +489,92 @@
   }
 
 
+}
+
+// Variables
+$accent-color: #4f52e1;
+$text-color: #1a1a1a;
+$radius: 14px;
+
+.top-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0;
+  font-family: 'Inter', sans-serif;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+    // Автоматична стрілочка для пунктів з підменю (як у WP)
+    &.menu-item-has-children::after {
+      content: "";
+      width: 10px;
+      height: 6px;
+      margin-left: 8px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%231A1A1A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    background-color: $accent-color;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: $radius;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s, background-color 0.2s;
+
+    // Біла стрілочка для кнопки
+    &::after {
+      content: "";
+      width: 10px;
+      height: 6px;
+      margin-left: 12px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1L5 5L9 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+      background-size: contain;
+    }
+
+    &:hover {
+      background-color: darken($accent-color, 5%);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Адаптив під мобільні
+@media (max-width: 768px) {
+  .top-nav__container {
+    gap: 15px;
+  }
+  .top-nav__btn-text {
+    display: none; // Лишаємо тільки стрілочку або іконку на мобільних
+  }
 }

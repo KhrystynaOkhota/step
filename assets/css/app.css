@@ -591,23 +591,6 @@ img {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.header .menu-item-has-children > a:after {
-  content: "\e900";
-  font-family: "icomoon" !important;
-  width: 9px;
-  height: 5px;
-  font-size: 6px;
-  position: absolute;
-  top: calc(50% - 3px);
-  right: 0;
-  -webkit-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
-}
-@media (max-width: 991px) {
-  .header .menu-item-has-children > a:after {
-    display: none;
-  }
-}
 @media (min-width: 991px) {
   .header .menu-item-has-children .sub-menu {
     position: absolute;
@@ -735,18 +718,6 @@ img {
   .header__main .menu-item-has-children > a {
     padding-right: 18px;
   }
-}
-.header__main .menu-item-has-children > a:after {
-  content: "\e900";
-  font-family: "icomoon" !important;
-  width: 9px;
-  height: 5px;
-  font-size: 6px;
-  position: absolute;
-  top: calc(50% - 3px);
-  right: 0;
-  -webkit-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
 }
 .header__main .menu-item-has-children .sub-menu {
   background: #fff;
@@ -1035,6 +1006,100 @@ img {
   opacity: 0;
 }
 
+.top-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 10px 0;
+  font-family: "Inter", sans-serif;
+}
+.top-nav__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 32px;
+}
+.top-nav__item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.top-nav__item.menu-item-has-children::after {
+  content: "";
+  width: 10px;
+  height: 6px;
+  margin-left: 8px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%231A1A1A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
+.top-nav__link {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 500;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.top-nav__link:hover {
+  opacity: 0.7;
+}
+.top-nav__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #4f52e1;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;
+  transition: background-color 0.2s, -webkit-transform 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
+  transition: transform 0.2s, background-color 0.2s, -webkit-transform 0.2s;
+}
+.top-nav__btn::after {
+  content: "";
+  width: 10px;
+  height: 6px;
+  margin-left: 12px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1L5 5L9 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+}
+.top-nav__btn:hover {
+  background-color: rgb(57.213592233, 60.5849514563, 221.286407767);
+  -webkit-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+          transform: translateY(-1px);
+}
+.top-nav__btn:active {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .top-nav__container {
+    gap: 15px;
+  }
+  .top-nav__btn-text {
+    display: none;
+  }
+}
 .footer {
   background: #111217;
   position: relative;
@@ -2298,6 +2363,10 @@ select:-webkit-autofill:focus {
   border-radius: 24px;
   gap: 16px;
   display: grid;
+}
+.s-benefits .benefit__icon {
+  width: 10px;
+  height: 10px;
 }
 .s-benefits .benefit__icon-wrap {
   width: 34px;
