@@ -49,9 +49,10 @@
     margin-bottom: 36px;
     font-size: 18px;
   }
-  & .btn-dark{
+
+  & .btn-dark {
     background: #111217;
-    color:#fff;
+    color: #fff;
     font-size: 18px;
     display: inline-block;
     padding: 19px 36px;
@@ -126,7 +127,7 @@
 
 
 
-  .program {
+  & .program {
     padding: 100px 0;
     background-color: #fcf4f4;
 
@@ -146,19 +147,10 @@
       display: flex;
       gap: 16px;
       align-items: flex-start;
-
-      /* Sticky налаштування */
-      position: sticky;
-      top: 40px;
-      /* Відступ від верху екрана при скролі */
-      z-index: 10;
-
-      /* Якщо ви хочете, щоб він займав 100% висоти вікна (не обов'язково) */
-      height: fit-content;
     }
   }
 
-  /* Стилі модуля */
+
   .program-module {
     background: #fff;
     border-radius: 36px;
@@ -199,15 +191,15 @@
     }
   }
 
-  /* Стилі карток статистики */
-  .stat-card {
+
+  & .stat-card {
     flex: 1;
-    padding: 30px;
-    border-radius: 30px;
+    padding: 36px;
+    border-radius: 36px;
     display: flex;
     flex-direction: column;
-    aspect-ratio: 1 / 1;
-    /* робить картку квадратною */
+    min-height: 275px;
+    justify-content: space-between;
 
     &--purple {
       background: #8e66ff;
@@ -219,8 +211,17 @@
       color: #333;
     }
 
+    &__info {
+      display: grid;
+      gap: 4px;
+    }
+
+    &__icon {
+      height: 40px;
+    }
+
     &__value {
-      font-size: 64px;
+      font-size: 66px;
       font-weight: bold;
       line-height: 1;
     }
@@ -258,8 +259,212 @@
   }
 }
 
-.s-faq{
-    & .heading {
+.s-faq {
+  & .heading {
     margin-bottom: 72px;
+  }
+}
+
+
+
+// Variables
+$bg-dark: #0f0f13;
+$accent-purple: #8166f2;
+$card-light: #fff9f5;
+$text-dark: #1a1a1a;
+$text-gray: #666666;
+$white: #ffffff;
+
+.pricing {
+  background-color: $bg-dark;
+  padding: 100px 20px;
+  color: $white;
+  font-family: 'Inter', sans-serif;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    font-weight: 500;
+  }
+
+  &__grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: stretch; // Картки однакової висоти
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 36px;
+  border-radius: 36px;
+
+  &--light {
+    background-color: #fff;
+    color: #1D1D1D;
+  }
+
+  &--accent {
+    background-color: #7C59F2;
+    color: #fff;
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
+  }
+
+  &__header {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-size: 32px;
+    line-height: 1.125;
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    opacity: 0.85;
+    margin: 0;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+  }
+
+  &__item {
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 12px;
+
+    &-label {
+      color: $text-gray;
+      min-width: 115px;
+      display: inline-block;
+    }
+  }
+
+  &__footer {
+    margin-top: auto; // Вирівнювання по низу
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+  }
+
+  &__price-label {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &__price-box {
+    text-align: right;
+  }
+
+  &__old-price {
+    display: block;
+    text-decoration: line-through;
+    color: #b0b0b0;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  &__current-price {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+
+    span {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__input {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 13.5px 20px;
+    border-radius: 16px;
+    border: none;
+    width: 100%;
+    color: #666666;
+    font-size: 16px;
+
+    &::placeholder {
+      color: #999;
+    }
+
+    &:focus {
+      outline: 2px solid $text-dark;
+    }
+  }
+
+  &__privacy {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 15px;
+    opacity: 0.7;
+    line-height: 1.4;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  width: 100%;
+  text-decoration: none;
+
+  &--primary {
+    background-color: $accent-purple;
+    color: $white;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &--dark {
+    background-color: $text-dark;
+    color: $white;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 }

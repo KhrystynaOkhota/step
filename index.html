@@ -10,7 +10,7 @@
 
     <title>sintegrum test</title>
     <meta name="description" content="" />
-    <link rel="stylesheet" href="assets/css/jquery-ui.css" />
+
     <link rel="stylesheet" href="assets/css/app.css" />
 
 
@@ -246,14 +246,20 @@
                             </div>
                             <aside class="program__sidebar">
                                 <div class="stat-card stat-card--purple">
-                                    <div class="stat-card__icon"></div>
-                                    <span class="stat-card__value">12</span>
-                                    <span class="stat-card__label">Лекцій</span>
+                                    <div class="stat-card__icon"><img src="assets/img/bookmark.svg" alt=""></div>
+                                    <div class="stat-card__info">
+                                        <div class="stat-card__value">12</div>
+                                        <div class="stat-card__label">Лекцій</div>
+                                    </div>
                                 </div>
                                 <div class="stat-card stat-card--yellow">
-                                    <div class="stat-card__icon"></div>
-                                    <span class="stat-card__value">10</span>
-                                    <span class="stat-card__label">Днів</span>
+                                    <div class="stat-card__icon"><img src="assets/img/calendar.svg" alt=""></div>
+
+                                    <div class="stat-card__info">
+                                        <div class="stat-card__value">10</div>
+                                        <div class="stat-card__label">Днів</div>
+                                    </div>
+
                                 </div>
                             </aside>
                         </div>
@@ -269,10 +275,60 @@
                         <h2 class="heading h2 text-center">Варіанти та ціни</h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 column">
+                <div class="row m-row align-center">
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 column ">
+                        <div class="pricing__grid">
+                            <article class="card card--light">
+                                <div class="card__header">
+                                    <h3 class="card__title text-bold">Space Explorers: Mars Academy</h3>
+                                </div>
 
+                                <ul class="card__list">
+                                    <li class="card__item">
+                                        <span class="card__item-label">Для дітей:</span>
+                                        7-14 років
+                                    </li>
+                                    <li class="card__item">
+                                        <span class="card__item-label">Період:</span>
+                                        10 днів
+                                    </li>
+                                    <li class="card__item">
+                                        <span class="card__item-label">Дати польотів:</span>
+                                        10.06 - 20.06.2026 | 10.07 - 20.07.2026
+                                    </li>
+                                </ul>
 
+                                <div class="card__footer">
+                                    <div class="card__price-label">Вартість курсу:</div>
+                                    <div class="card__price-box">
+                                        <span class="card__old-price">6 600 грн</span>
+                                        <div class="card__current-price">6 600 <span>грн</span></div>
+                                    </div>
+                                </div>
+
+                                <button class="button button--primary">Забронювати місце</button>
+                            </article>
+
+                            <aside class="card card--accent">
+                                <div class="card__header">
+                                    <h3 class="card__title text-bold">Консультація експерта</h3>
+                                    <p class="card__subtitle">Залиште заявку, і ми відповімо на всі питання</p>
+                                </div>
+
+                                <form class="form">
+                                    <input type="text" class="form__input" placeholder="Ваше ім'я" aria-label="Ім'я">
+                                    <input type="tel" class="form__input" placeholder="+38 ( __ ) ___ - __ - __"
+                                        aria-label="Телефон">
+                                    <input type="email" class="form__input" placeholder="Електронна пошта"
+                                        aria-label="Email">
+                                    <button type="submit" class="button button--dark">Відправити</button>
+                                </form>
+
+                                <p class="form__privacy">
+                                    Натискаючи кнопку, ви приймаєте умови конфіденційності
+                                </p>
+                            </aside>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -515,11 +571,6 @@
     </footer>
 
     <script src="./assets/js/jquery-3.7.0.min.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/jquery.sumoselect.min.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
-
-
     <script src="src/scripts/js_app.js"></script>
 
 
