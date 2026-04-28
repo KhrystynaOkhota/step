@@ -1,0 +1,154 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.decor-line {
+  height: 70px;
+  width: 1px;
+  margin: 0 auto;
+  background-color: $white-color;
+}
+
+.border-radius {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.decor {
+  padding-left: 122px;
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 122px;
+    height: 1px;
+    background: #1D9F96;
+    position: absolute;
+    left: -20px;
+    top: 21px;
+  }
+}
+
+
+html:not(.touch-screen)::-webkit-scrollbar, html:not(.touch-screen) *::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+html:not(.touch-screen)::-webkit-scrollbar-track, html:not(.touch-screen) *::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+
+html:not(.touch-screen)::-webkit-scrollbar-thumb, html:not(.touch-screen) *::-webkit-scrollbar-thumb {
+  background-color: $accent-color !important;
+}
+
+
+html {
+  overflow-y: scroll;
+}
+
+body .hide-scrollbar, html .hide-scrollbar {
+  scrollbar-width: none
+}
+
+body .hide-scrollbar::-webkit-scrollbar, html .hide-scrollbar::-webkit-scrollbar {
+  display: none
+}
+
+
+img::selection {
+  background-color: transparent;
+}
+
+.default-icon {
+  width: 100%;
+
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.--relative {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.overlap {
+  position: relative;
+  z-index: 3;
+}
+
+body, html {
+  &.overflow-hidden {
+    // padding-left: calc(100vw - 100%);
+    overflow: hidden;
+
+  }
+}
+
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none; /* Safari/Chrome */
+  pointer-events: auto; /* keep interactions like clicks */
+}
+
+.lg-img-wrap img {
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
+.body-padding {
+  height: 70px;
+  @media (max-width: $breakpoint-lg) {
+    height: 70px;
+  }
+}
+
+
+.section {
+  overflow: hidden;
+  position: relative;
+
+  & .heading {
+
+  }
+}
+
+
+.main {
+  overflow: hidden;
+  min-height: 50vh;
+
+  &-wrapper {
+    //   position: relative;
+    //  min-height: 100vh;
+    //  overflow: hidden;
+    z-index: 1;
+  }
+
+}
+
+
+
+

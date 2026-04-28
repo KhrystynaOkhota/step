@@ -1,0 +1,143 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.footer {
+  background: #111217;
+  position: relative;
+  color: #fff;
+
+  &__top {
+    padding: 0 0 92px 0;
+  }
+
+  &__bottom {
+    padding: 24px 0;
+
+    &:before {
+      content: '';
+      height: 1px;
+      background: rgba(255, 255, 255, .5);
+      position: absolute;
+      top: 0;
+      left: 10px;
+      right: 10px;
+    }
+
+    & .copyright {
+      font-size: 12px;
+      font-weight: 300;
+      color: #fff;
+    }
+  }
+
+
+  &-info {
+    &__wrap {
+      @media (max-width: $breakpoint-md) {
+        padding: 0 0 30px 0;
+      }
+    }
+
+    &__title {
+      padding-top: 36px;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom:1px solid rgba(255,255,255,.4);
+      font-size: 14px;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 17px;
+      }
+    }
+
+    & .menu {
+      gap: 15px;
+      display: grid;
+
+      @media (max-width: $breakpoint-md) {
+        gap: 10px;
+      }
+
+      &-item {
+        & a {
+          font-size: 16px;
+          font-weight: 300;
+          @include transition(.4);
+
+          @media (max-width: $breakpoint-md) {
+            font-size: 14px;
+          }
+
+          &:hover {
+            color: rgba(75, 101, 83, 1);
+          }
+        }
+
+      }
+    }
+
+    & .contact {
+      gap: 15px;
+      display: grid;
+
+      @media (max-width: $breakpoint-md) {
+        gap: 10px;
+      }
+
+      &-item {
+        font-size: 16px;
+        font-weight: 300;
+
+        @media (max-width: $breakpoint-md) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 400px) {
+          font-size: 13px;
+        }
+
+        & a[href^="mailto:"] {
+          color: rgba(75, 101, 83, 1);
+
+        }
+      }
+    }
+  }
+
+  &-links {
+    gap: 50px;
+
+    @media (max-width: $breakpoint-md) {
+      gap: 30px;
+      width: 100%;
+    }
+
+    & li {
+      & a {
+        @include fontSize(13, 16);
+
+        font-weight: 300;
+        color: rgba(75, 101, 83, 1);
+
+      }
+
+      &:nth-child(1) {
+        position: relative;
+
+        &:after {
+          content: '';
+          width: 1px;
+          height: 100%;
+          background: #CEC1B6;
+          position: absolute;
+          right: -25px;
+          top: 0;
+
+          @media (max-width: $breakpoint-md) {
+            right: -15px;
+          }
+        }
+      }
+    }
+  }
+}

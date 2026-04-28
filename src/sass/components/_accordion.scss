@@ -1,0 +1,80 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.accordion {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 8px;
+
+  &-item {
+    padding: 28px 36px;
+    background: #F7F7F9;
+    border-radius: 16px;
+  }
+
+  &-title {
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1.2;
+    color: rgba(29, 29, 29, 1);
+
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all ease-out .5s;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 1);
+      & img{
+        transform: rotate(0deg);
+        @include transition(.4);
+      }
+    }
+    &.is-active{
+      & .accordion-title__btn{
+        & img{
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+
+.accordion-title.is-active i::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+  transition: 0.3s;
+}
+
+.accordion-inner {
+  display: none;
+
+  & .text {
+    font-size: 18px;
+    line-height: 1.5;
+    padding-top: 16px;
+  }
+}
+
+
+
+@media (min-width: 1200px) {
+  .accordion-title:hover {
+    color: var(--clr-primary);
+  }
+}
+
+@media (max-width: 991px) {
+  .accordion-item {
+    --padding-acc: .875rem;
+  }
+}

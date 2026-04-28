@@ -1,0 +1,265 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.bg-wrap {
+  &:after {
+    content: '';
+    height: 100%;
+    left: fluid(30, 60);
+    right: fluid(30, 60);
+    top: 0;
+    background: rgba(247, 247, 249, 1);
+    position: absolute;
+    border-radius: 72px;
+    z-index: -1;
+
+    @media (max-width: 1450px) {
+      width: calc(100% - 10px);
+      left: 5px;
+    }
+  }
+
+  &--black {
+    &:after {
+      background: #111217;
+    }
+  }
+
+  &--violet {
+    &:after {
+      background: #E4DFFF;
+    }
+  }
+}
+
+.spacer {
+  height: fluid(60, 120);
+}
+
+.s-hero {
+  padding: 184px 0;
+
+  & .heading {
+    margin-bottom: 16px;
+    font-size: 50px;
+  }
+
+  & .description {
+    margin-bottom: 36px;
+    font-size: 18px;
+  }
+  & .btn-dark{
+    background: #111217;
+    color:#fff;
+    font-size: 18px;
+    display: inline-block;
+    padding: 19px 36px;
+    border-radius: 12px;
+  }
+}
+
+.s-benefits {
+  padding: 48px 0 0 0;
+
+  & .benefit {
+    padding: 24px;
+    background: #F7F7F9;
+    border-radius: 24px;
+    gap: 16px;
+    display: grid;
+
+    &__icon {
+      &-wrap {
+        width: 34px;
+        height: 34px;
+        border-radius: 100%;
+        background: #111217;
+      }
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 25px;
+    }
+
+    &__text {
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    &__wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+
+      @media (max-width: $breakpoint-lg) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+.s-about {
+  & .heading {
+    font-size: 38px;
+    line-height: 46px;
+    margin-bottom: 24px;
+  }
+
+  & .description {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.s-program {
+  padding: fluid(60, 120) 0;
+
+  & .heading {
+    margin-bottom: 72px;
+  }
+
+
+
+  .program {
+    padding: 100px 0;
+    background-color: #fcf4f4;
+
+    &__main {
+      display: grid;
+      gap: 16px;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: 61% 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    &__sidebar {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+
+      /* Sticky налаштування */
+      position: sticky;
+      top: 40px;
+      /* Відступ від верху екрана при скролі */
+      z-index: 10;
+
+      /* Якщо ви хочете, щоб він займав 100% висоти вікна (не обов'язково) */
+      height: fit-content;
+    }
+  }
+
+  /* Стилі модуля */
+  .program-module {
+    background: #fff;
+    border-radius: 36px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    &__title {
+      font-size: fluid(20, 24);
+    }
+
+    &__count {
+      font-size: flujid(14, 16);
+      color: rgba(63, 75, 94, .5);
+    }
+
+    &__list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &__item {
+      background: rgba(247, 247, 249, 1);
+      padding: 8px 16px;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      width: max-content;
+    }
+  }
+
+  /* Стилі карток статистики */
+  .stat-card {
+    flex: 1;
+    padding: 30px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1 / 1;
+    /* робить картку квадратною */
+
+    &--purple {
+      background: #8e66ff;
+      color: #fff;
+    }
+
+    &--yellow {
+      background: #ffde59;
+      color: #333;
+    }
+
+    &__value {
+      font-size: 64px;
+      font-weight: bold;
+      line-height: 1;
+    }
+  }
+}
+
+.s-price {
+  padding: fluid(60, 120) 0;
+
+  & .heading {
+    margin-bottom: 72px;
+    color: #fff;
+  }
+}
+
+.s-gallery {
+  & .heading {
+    margin-bottom: 48px;
+  }
+
+  & .gallery {
+    &__wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8.67px;
+
+      & img {
+        width: 100%;
+        height: auto;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 36px;
+      }
+    }
+  }
+}
+
+.s-faq{
+    & .heading {
+    margin-bottom: 72px;
+  }
+}
