@@ -70,6 +70,11 @@
     gap: 16px;
     display: grid;
 
+    &:nth-child(1) {
+      background: #7C60E9;
+      color:#fff;
+    }
+
     &__icon {
       width: 10px;
       height: 10px;
